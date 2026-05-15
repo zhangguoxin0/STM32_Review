@@ -1,3 +1,7 @@
-Load "d:\\02_STM32\\4_STM32F103ZET6\\template\\Objects\\project.axf" 
-Erase Done.Programming Done.Verify OK.Application running ...
-Flash Load finished at 09:47:36
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: Code=568 RO-data=320 RW-data=0 ZI-data=1024  
+".\Objects\project.axf" - 0 Error(s), 0 Warning(s).
+Build Time Elapsed:  00:00:01

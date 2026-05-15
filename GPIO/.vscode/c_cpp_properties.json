@@ -3,12 +3,10 @@
         {
             "name": "Target 1",
             "includePath": [
-                "d:\\02_STM32\\4_STM32F103ZET6\\template\\Start",
-                "d:\\02_STM32\\4_STM32F103ZET6\\template\\Library",
-                "d:\\02_STM32\\4_STM32F103ZET6\\template\\User",
-                "d:\\02_STM32\\4_STM32F103ZET6\\template\\System",
-                "d:\\02_STM32\\4_STM32F103ZET6\\template\\Hardware",
-                "d:\\02_STM32\\4_STM32F103ZET6\\template\\Platform",
+                "d:\\STM32_Review\\GPIO\\Start",
+                "d:\\STM32_Review\\GPIO\\Library",
+                "d:\\STM32_Review\\GPIO\\User",
+                "d:\\STM32_Review\\GPIO\\System",
                 "C:\\Keil_v5\\ARM\\ARMCC\\include",
                 "C:\\Keil_v5\\ARM\\ARMCC\\include\\rw"
             ],
