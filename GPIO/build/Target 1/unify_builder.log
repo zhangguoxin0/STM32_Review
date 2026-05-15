@@ -1,0 +1,242 @@
+[2025-09-21 11:37:48]	Not found 'C Compiler' !, [path]: "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe"
+   at unify_builder.Program.Main(String[] args_)
+
+[2025-09-21 11:40:46]	Not found 'C Compiler' !, [path]: "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe"
+   at unify_builder.Program.Main(String[] args_)
+
+[2025-09-21 11:40:57]	Not found 'C Compiler' !, [path]: "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe"
+   at unify_builder.Program.Main(String[] args_)
+
+[2025-09-21 11:41:12]	Not found 'C Compiler' !, [path]: "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe"
+   at unify_builder.Program.Main(String[] args_)
+
+[2025-09-21 11:42:00]	Not found 'C Compiler' !, [path]: "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe"
+   at unify_builder.Program.Main(String[] args_)
+
+[2025-09-21 11:43:44]	[info] incremental build: 34 source files changed
+These source files will be recompiled
+---
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Hardware\Buzzer.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Hardware\Key.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Hardware\LED.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Hardware\LightSensor.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Hardware\OLED.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\misc.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_adc.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_bkp.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_can.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_cec.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_crc.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_dac.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_dbgmcu.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_dma.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_exti.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_flash.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_fsmc.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_gpio.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_i2c.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_iwdg.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_pwr.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_rcc.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_rtc.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_sdio.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_spi.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_tim.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_usart.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_wwdg.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Start\core_cm3.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Start\startup_stm32f10x_md.s': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Start\system_stm32f10x.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\System\Delay.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\User\main.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\User\stm32f10x_it.c': object (.o) file not exist
+
+[2025-09-21 11:43:45]	compilation failed at : "d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_flash.c", exit code: 1
+command: 
+  "C:\Keil_v5\ARM\02_arm5_compiler\bin\armcc.exe" -c --apcs=interwork -I. -IStart -ILibrary -IUser -ISystem -IHardware -I.cmsis/include -I"RTE/_Target 1" -D"USE_STDPERIPH_DRIVER" --cpu Cortex-M3 --li --c99 -O0 --split_sections --gnu --diag_suppress=1 --diag_suppress=1295 -g -o ".\build\Target 1\.obj\Library\stm32f10x_flash.o" --no_depend_system_headers --depend ".\build\Target 1\.obj\Library\stm32f10x_flash.d" .\Library\stm32f10x_flash.c
+   at unify_builder.Program.compileByMulThread(Int32 thrNum, CmdInfo[] cmds_, List`1 errLogs)
+   at unify_builder.Program.Main(String[] args_)
+---
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Hardware\Buzzer.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Hardware\Key.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Hardware\LED.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Hardware\LightSensor.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Hardware\OLED.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\misc.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_adc.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_cec.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_dac.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_bkp.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_crc.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_dbgmcu.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_can.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_dma.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_exti.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_flash.c: 0 warnings, 1 error
+
+[2025-09-21 11:43:52]	[info] incremental build: 34 source files changed
+These source files will be recompiled
+---
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Hardware\Buzzer.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Hardware\Key.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Hardware\LED.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Hardware\LightSensor.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Hardware\OLED.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\misc.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_adc.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_bkp.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_can.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_cec.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_crc.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_dac.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_dbgmcu.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_dma.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_exti.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_flash.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_fsmc.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_gpio.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_i2c.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_iwdg.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_pwr.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_rcc.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_rtc.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_sdio.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_spi.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_tim.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_usart.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Library\stm32f10x_wwdg.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Start\core_cm3.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Start\startup_stm32f10x_md.s': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\Start\system_stm32f10x.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\System\Delay.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\User\main.c': object (.o) file not exist
+'d:\02_STM32\06_OLEDœ‘ æ∆¡\User\stm32f10x_it.c': object (.o) file not exist
+
+[2025-09-21 11:43:53]	compilation failed at : "d:\02_STM32\06_OLEDœ‘ æ∆¡\Hardware\OLED.c", exit code: 1
+command: 
+  "C:\Keil_v5\ARM\02_arm5_compiler\bin\armcc.exe" -c --apcs=interwork -I. -IStart -ILibrary -IUser -ISystem -IHardware -I.cmsis/include -I"RTE/_Target 1" -D"USE_STDPERIPH_DRIVER" --cpu Cortex-M3 --li --c99 -O0 --split_sections --gnu --diag_suppress=1 --diag_suppress=1295 -g -o ".\build\Target 1\.obj\Hardware\OLED.o" --no_depend_system_headers --depend ".\build\Target 1\.obj\Hardware\OLED.d" .\Hardware\OLED.c
+   at unify_builder.Program.compileByMulThread(Int32 thrNum, CmdInfo[] cmds_, List`1 errLogs)
+   at unify_builder.Program.Main(String[] args_)
+---
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Hardware\Buzzer.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Hardware\Key.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Hardware\LED.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Hardware\LightSensor.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\misc.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_adc.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_bkp.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_can.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_cec.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_crc.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_dac.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_dbgmcu.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_dma.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_exti.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Library\stm32f10x_flash.c: 0 warnings, 1 error
+"Start\stm32f10x.h", line 95: Error:  #35: #error directive: "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+   #error "Please select first the target STM32F10x device used in your application (in stm32f10x.h file)"
+    ^
+.\Hardware\OLED.c: 0 warnings, 1 error
+
+[2025-09-21 11:45:17]	Not found 'C Compiler' !, [path]: "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe"
+   at unify_builder.Program.Main(String[] args_)
+
+[2025-09-21 11:51:21]	Not found 'C Compiler' !, [path]: "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe"
+   at unify_builder.Program.Main(String[] args_)
+
+[2025-09-21 11:53:45]	Not found 'C Compiler' !, [path]: "C:\Keil_v5\ARM\ARMCC\bin\armcc.exe"
+   at unify_builder.Program.Main(String[] args_)
+
