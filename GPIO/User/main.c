@@ -106,7 +106,7 @@ int main(void)
 #endif
 
 /* 封装端口复位/置位函数 */
-#if 1
+#if 0
 #include <stdint.h>
 #include "Delay.h"
 
@@ -157,6 +157,23 @@ int main(void)
         // 将PA8引脚电平拉高
         MY_GPIO_SetBits(MY_GPIOA, MY_GPIO_PIN8);
         Delay_ms(1000);
+    }
+}
+#endif
+
+/* 固件库实现GPIO输出 */
+#if 0
+#include "bsp_led.h"
+#include "Delay.h"
+
+int main(void)
+{
+    LED_Init();
+
+    while(1)
+    {
+        LED0_Toggle();
+        Delay_ms(500);
     }
 }
 #endif

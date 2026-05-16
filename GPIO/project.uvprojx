@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Start;.\Library;.\User;.\System</IncludePath>
+              <IncludePath>.\Start;.\Library;.\User;.\System;.\Hardware\LED</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -688,6 +688,21 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\User\main.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>LED</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\LED\bsp_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\LED\bsp_led.h</FilePath>
             </File>
           </Files>
         </Group>
