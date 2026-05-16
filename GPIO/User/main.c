@@ -177,3 +177,23 @@ int main(void)
     }
 }
 #endif
+
+/* 固件库实现GPIO输入 */
+#if 1
+#include "bsp_led.h"
+#include "bsp_key.h"
+
+int main(void)
+{
+    LED0_Init();
+    KEY1_Init();
+
+    while(1)
+    {
+        if(KEY1_Scan())
+        {
+            LED0_Toggle();
+        }
+    }
+}
+#endif

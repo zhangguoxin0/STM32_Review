@@ -3,7 +3,7 @@
 
 #include "stm32f10x.h"
 
-void LED_Init(void);
+void LED0_Init(void);
 void LED0_ON(void);
 void LED0_OFF(void);
 void LED0_Toggle(void);

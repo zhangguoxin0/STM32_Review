@@ -1,6 +1,6 @@
 #include "bsp_led.h"
 
-void LED_Init(void)
+void LED0_Init(void)
 {
     // 1.开启GPIOA时钟
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
@@ -12,6 +12,8 @@ void LED_Init(void)
     GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
     // 4.调用GPIO初始化函数，把配置好的结构体成员的参数写入寄存器
     GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    LED0_OFF();
 }
 
 void LED0_ON(void)

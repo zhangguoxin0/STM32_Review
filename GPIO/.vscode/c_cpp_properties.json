@@ -7,7 +7,9 @@
                 "d:\\STM32_Review\\GPIO\\Library",
                 "d:\\STM32_Review\\GPIO\\User",
                 "d:\\STM32_Review\\GPIO\\System",
+                "d:\\STM32_Review\\GPIO\\Hardware",
                 "d:\\STM32_Review\\GPIO\\Hardware\\LED",
+                "d:\\STM32_Review\\GPIO\\Hardware\\KEY",
                 "C:\\Keil_v5\\ARM\\ARMCC\\include",
                 "C:\\Keil_v5\\ARM\\ARMCC\\include\\rw"
             ],

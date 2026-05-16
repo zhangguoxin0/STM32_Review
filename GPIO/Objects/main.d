@@ -29,4 +29,4 @@
 .\objects\main.o: .\Library\stm32f10x_wwdg.h
 .\objects\main.o: .\Library\misc.h
 .\objects\main.o: .\Hardware\LED\bsp_led.h
-.\objects\main.o: .\System\Delay.h
+.\objects\main.o: .\Hardware\KEY\bsp_key.h
