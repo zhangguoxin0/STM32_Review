@@ -58,6 +58,7 @@ int main(void)
 /* 构建库函数雏形，加深对库函数的理解 */
 #if 0
 #include <stdint.h>
+#include "Delay.h"
 
 typedef struct
 {
@@ -75,7 +76,7 @@ typedef struct
 #define RCC_APB2ENR *(unsigned int *)(MY_RCC_BASE + 0x18)
 
 #define MY_GPIOA_BASE (unsigned int)0x40010800
-#define MY_GPIOA ((MY_GPIO_TypeDef*)MY_GPIOA_BASE)
+#define MY_GPIOA ((MY_GPIO_TypeDef *)MY_GPIOA_BASE)
 
 int main(void)
 {
@@ -88,7 +89,7 @@ int main(void)
     MY_GPIOA->CRH &= ~(3 << 1);
     MY_GPIOA->CRH |= (1 << 1);
     // 将PA8引脚电平拉低
-    MY_GPIOA->BSRRH &= ~(1 << 8);
+    MY_GPIOA->ODR &= ~(1 << 8);
 
     // 配置PA1工作模式为推挽输出
     MY_GPIOA->CRL &= ~(3 << (2 * 2)); 
@@ -96,10 +97,66 @@ int main(void)
     MY_GPIOA->CRL &= ~(3 << (2 * 3)); 
     MY_GPIOA->CRL &= ~(3 << (2 * 3)); 
     // PA1输出低电平
-    MY_GPIOA->BSRRL &= ~(1 << 1);
+    MY_GPIOA->BSRRL |= (1 << 17);
 
     while (1)
     {
+    }
+}
+#endif
+
+/* 封装端口复位/置位函数 */
+#if 1
+#include <stdint.h>
+#include "Delay.h"
+
+typedef struct
+{
+    uint32_t CRL;
+    uint32_t CRH;
+    uint32_t IDR;
+    uint32_t ODR;
+    uint32_t BSRR;
+    uint32_t BRR;
+    uint32_t LCKR;
+} MY_GPIO_TypeDef;
+
+#define MY_RCC_BASE (unsigned int)0x40021000
+#define RCC_APB2ENR *(unsigned int *)(MY_RCC_BASE + 0x18)
+
+#define MY_GPIOA_BASE (unsigned int)0x40010800
+#define MY_GPIOA ((MY_GPIO_TypeDef *)MY_GPIOA_BASE)
+#define MY_GPIO_PIN8 (1 << 8)
+
+void MY_GPIO_SetBits(MY_GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
+{
+    GPIOx->BSRR |= GPIO_Pin;
+}
+
+void MY_GPIO_ReSetBit(MY_GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
+{
+    GPIOx->BSRR |= (GPIO_Pin << 16);
+}
+
+int main(void)
+{
+    // 开启GPIOA时钟
+    RCC_APB2ENR |= (1 << 2);
+
+    // 配置PA8工作模式为开漏输出，速度为高速模式
+    MY_GPIOA->CRH &= ~(3 << 0);
+    MY_GPIOA->CRH |= (3 << 0);
+    MY_GPIOA->CRH &= ~(3 << 1);
+    MY_GPIOA->CRH |= (1 << 1);
+
+    while (1)
+    {
+        // 将PA8引脚电平拉低
+        MY_GPIO_ReSetBit(MY_GPIOA, MY_GPIO_PIN8);
+        Delay_ms(1000);
+        // 将PA8引脚电平拉高
+        MY_GPIO_SetBits(MY_GPIOA, MY_GPIO_PIN8);
+        Delay_ms(1000);
     }
 }
 #endif
