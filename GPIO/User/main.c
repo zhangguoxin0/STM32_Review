@@ -9,13 +9,13 @@ int main(void)
 {
     // 开启GPIOA的时钟
     RCC_APB2_IOPA |= (1 << 2);
-    // 配置PA1工作模式为推挽输出
+    // 配置PA0工作模式为推挽输出
     GPIOA_CRL &= ~(3 << (2 * 0)); // 清空CRL寄存器MODE0
     GPIOA_CRL |= (3 << (2 * 0));  // 将CRL寄存器MODE0设置为11 => 输出模式,最大速度50MHz
     GPIOA_CRL &= ~(3 << (2 * 1)); // 清空CRL寄存器CNF0
     GPIOA_CRL &= ~(3 << (2 * 1)); // 将CRL寄存器CNF0设置为00 => 推挽输出
-    // PA1输出低电平
-    GPIOA_ODR &= ~(1 << 1); // 将ODR寄存器的ODR1置0
+    // PA0输出低电平
+    GPIOA_ODR &= ~(1 << 0); // 将ODR寄存器的ODR1置0
     while (1)
     {
     }
@@ -55,4 +55,51 @@ int main(void)
 }
 #endif
 
+/* 构建库函数雏形，加深对库函数的理解 */
+#if 0
+#include <stdint.h>
 
+typedef struct
+{
+    uint32_t CRL;
+    uint32_t CRH;
+    uint32_t IDR;
+    uint32_t ODR;
+    uint16_t BSRRL;
+    uint16_t BSRRH;
+    uint32_t BRR;
+    uint32_t LCKR;
+} MY_GPIO_TypeDef;
+
+#define MY_RCC_BASE (unsigned int)0x40021000
+#define RCC_APB2ENR *(unsigned int *)(MY_RCC_BASE + 0x18)
+
+#define MY_GPIOA_BASE (unsigned int)0x40010800
+#define MY_GPIOA ((MY_GPIO_TypeDef*)MY_GPIOA_BASE)
+
+int main(void)
+{
+    // 开启GPIOA时钟
+    RCC_APB2ENR |= (1 << 2);
+
+    // 配置PA8工作模式为开漏输出，速度为高速模式
+    MY_GPIOA->CRH &= ~(3 << 0);
+    MY_GPIOA->CRH |= (3 << 0);
+    MY_GPIOA->CRH &= ~(3 << 1);
+    MY_GPIOA->CRH |= (1 << 1);
+    // 将PA8引脚电平拉低
+    MY_GPIOA->BSRRH &= ~(1 << 8);
+
+    // 配置PA1工作模式为推挽输出
+    MY_GPIOA->CRL &= ~(3 << (2 * 2)); 
+    MY_GPIOA->CRL |= (3 << (2 * 2));  
+    MY_GPIOA->CRL &= ~(3 << (2 * 3)); 
+    MY_GPIOA->CRL &= ~(3 << (2 * 3)); 
+    // PA1输出低电平
+    MY_GPIOA->BSRRL &= ~(1 << 1);
+
+    while (1)
+    {
+    }
+}
+#endif
