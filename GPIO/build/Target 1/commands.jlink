@@ -1,6 +1,0 @@
-r
-halt
-loadfile "d:\02_STM32\06_OLEDœ‘ æ∆¡\build\Target 1\project.hex"
-r
-go
-exit
