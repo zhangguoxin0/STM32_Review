@@ -1,0 +1,6 @@
+.vscode
+build
+DebugConfig
+Objects
+project*
+!project.uvprojx
