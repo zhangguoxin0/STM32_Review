@@ -29,6 +29,7 @@ void EXTI_Configuration(void)
     GPIO_Init(GPIOF, &GPIO_InitStruct);
     // 初始化EXTI
     RCC_APB2PeriphClockCmd(RCC_APB2ENR_AFIOEN, ENABLE);
+    AFIO->EXTICR[2] |= AFIO_EXTICR3_EXTI10_PF;
     EXTI_InitTypeDef EXIT_InitStruct;
     EXIT_InitStruct.EXTI_Line = EXTI_Line10;            // 启用EXTI10
     EXIT_InitStruct.EXTI_Mode = EXTI_Mode_Interrupt;    // 设置模式为外部中断
@@ -41,7 +42,6 @@ void EXTI_Configuration(void)
 void IRQ_Init(void)
 {
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); // 中断优先级分组
-    AFIO->EXTICR[2] |= AFIO_EXTICR3_EXTI10_PF;
     EXTI_Configuration();
     NVIC_Configuration();
 }
