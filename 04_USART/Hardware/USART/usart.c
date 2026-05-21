@@ -61,11 +61,57 @@ void USART1_SendChar(uint8_t ch)
 uint8_t USART1_ReceiveChar(void)
 {
     // 判断SR里RXNE是否为1，表示接收缓冲区非空
-    while (USART1->SR & USART_SR_RXNE == 0)
+    while ((USART1->SR & USART_SR_RXNE) == 0)
     {
     }
-    // RXEN位为0 -> 跳出循环 -> 表示接收缓冲区有数据，可以进行读取
+    // RXEN位为1 -> 跳出循环 -> 表示接收缓冲区有数据，可以进行读取
 
     // 读取已经接收到的数据
     return USART1->DR;
+}
+
+/**
+ * @brief USART发送一个字符串
+ *
+ * @param str 需要发送的字符串
+ * @param size 字符串长度
+ */
+void USART1_SendString(uint8_t *str, uint8_t size)
+{
+    uint8_t i;
+    for (i = 0; i < size; i++)
+    {
+        USART1_SendChar(str[i]);
+    }
+}
+
+/**
+ * @brief 接收字符串
+ *
+ * @param buff 存放接收数据的数组
+ * @param size 接收到的数据的长度
+ */
+void USART1_ReceiveString(uint8_t buff[], uint8_t *size)
+{
+    uint8_t count = 0;
+
+    // 使用阻塞的方式，在循化中不断接收数据
+    while (1)
+    {
+        // 判断SR里RXNE是否为1，表示接收缓冲区非空
+        while ((USART1->SR & USART_SR_RXNE) == 0)
+        {
+            // 判断是否检测到空闲帧
+            if (USART1->SR & USART_SR_IDLE)
+            {
+                // 字符串接收完毕
+                *size = count;
+                return;
+            }
+        }
+
+        // 将接收的数据存入缓冲区
+        buff[count] = USART1->DR;
+        count++;
+    }
 }

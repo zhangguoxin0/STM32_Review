@@ -4,20 +4,18 @@
 
 int main(void)
 {
+    uint8_t r_buff[10];
+    uint8_t r_size;
+
     USART1_Init();
 
-    // 发送测试
-    USART1_SendChar('H');
-    USART1_SendChar('e');
-    USART1_SendChar('l');
-    USART1_SendChar('l');
-    USART1_SendChar('o');
+    // 发送字符串测试
+    USART1_SendString("Hello",5);
 
     while (1)
     {
-        // 接收测试
-        uint8_t c = USART1_ReceiveChar();
-        USART1_SendChar(c);
-        Delay_ms(1000);
+        // 接收字符串测试
+        USART1_ReceiveString(r_buff, &r_size);
+        USART1_SendString(r_buff, r_size);
     }
 }
