@@ -1,5 +1,9 @@
 #include "usart.h"
 
+extern uint8_t r_buff[100];
+extern uint8_t r_size;
+extern uint8_t volatile r_flash;
+
 void USART1_Init(void)
 {
     // 1.开启时钟
@@ -28,6 +32,15 @@ void USART1_Init(void)
     USART1->CR1 &= ~USART_CR1_M;    // 8位有效数据
     USART1->CR1 &= ~USART_CR1_PCE;  // 无校验位
     USART1->CR2 &= ~USART_CR2_STOP; // 00：1个停止位
+
+    // 4.开启中断使能
+    USART1->CR1 |= USART_CR1_IDLEIE; // IDLE中断使能
+    USART1->CR1 |= USART_CR1_RXNEIE; // 接收缓冲区非空中断使能
+
+    // 5.配置NVIC
+    NVIC_SetPriorityGrouping(3);      // 中断优先级分组
+    NVIC_SetPriority(USART1_IRQn, 3); // 设置优先级
+    NVIC_EnableIRQ(USART1_IRQn);      // 使能中断
 }
 
 /**
@@ -63,6 +76,11 @@ uint8_t USART1_ReceiveChar(void)
     // 判断SR里RXNE是否为1，表示接收缓冲区非空
     while ((USART1->SR & USART_SR_RXNE) == 0)
     {
+        // 如果IDLE位置起，说明发送方已经发送完毕，直接退出即可
+        if (USART1->SR & USART_SR_IDLE)
+        {
+            return 0;
+        }
     }
     // RXEN位为1 -> 跳出循环 -> 表示接收缓冲区有数据，可以进行读取
 
@@ -95,23 +113,38 @@ void USART1_ReceiveString(uint8_t buff[], uint8_t *size)
 {
     uint8_t count = 0;
 
-    // 使用阻塞的方式，在循化中不断接收数据
-    while (1)
+    while ((USART1->SR & USART_SR_IDLE) == 0)
     {
-        // 判断SR里RXNE是否为1，表示接收缓冲区非空
-        while ((USART1->SR & USART_SR_RXNE) == 0)
-        {
-            // 判断是否检测到空闲帧
-            if (USART1->SR & USART_SR_IDLE)
-            {
-                // 字符串接收完毕
-                *size = count;
-                return;
-            }
-        }
-
-        // 将接收的数据存入缓冲区
-        buff[count] = USART1->DR;
+        buff[count] = USART1_ReceiveChar();
         count++;
+    }
+
+    // 清除IDLE位 -> 读取一次SR和DR寄存器
+    // USART1->SR;  // SR在上文已经读取一次，无需再次读取
+    USART1->DR;
+
+    *size = count - 1;
+}
+
+/**
+ * @brief USART1中断服务程序
+ *
+ */
+void USART1_IRQHandler(void)
+{
+    // 判断中断类型
+    if ((USART1->SR & USART_SR_RXNE) != 0) // 注意判断不能写：(USART1->SR & USART_SR_RXNE) == 1 ，避坑！！！
+    {
+        // 接收缓冲区非空中断执行逻辑 -> 接收一个字符
+        r_buff[r_size] = USART1->DR; // 对USART_DR的读操作可以将该位清零
+        r_size++;
+    }
+    else if ((USART1->SR & USART_SR_IDLE) != 0)
+    {
+        // IDLE非空中断，表示一次接收完成
+        // USART1->SR;  无需再次读取SR
+        USART1->DR; // 清除IDLE位
+
+        r_flash = 1;
     }
 }
