@@ -1,8 +1,6 @@
 #include "i2c.h"
 #include "Delay.h"
 
-#define USE_SOFT_IIC 1 // 使用I2C软件模拟，关闭时使用硬件I2C
-
 #ifdef USE_SOFT_IIC
 /************************************** 底层操作函数 **************************************/
 /**
@@ -226,5 +224,153 @@ uint8_t I2C_ReadByte(void)
 }
 
 #else
+
+void I2C_Init(void)
+{
+    // 1.开启时钟
+    RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
+    RCC->APB1ENR |= RCC_APB1ENR_I2C2EN;
+
+    // 2.GPIO工作模式配置：复用开漏输出
+    // SCL -> PB10
+    GPIOB->CRH |= GPIO_CRH_MODE10;
+    GPIOB->CRH |= GPIO_CRH_CNF10;
+    // SDA -> PA11
+    GPIOB->CRH |= GPIO_CRH_MODE11;
+    GPIOB->CRH |= GPIO_CRH_CNF11;
+
+    // 3.配置I2C工作模式
+    I2C2->CR1 &= ~I2C_CR1_SMBUS; // I2C模式
+    I2C2->CCR &= ~I2C_CCR_FS;    // 标准模式
+    I2C2->CR2 |= 36;             // 输入时钟频率36Mhz
+    I2C2->CCR |= 180;            // 配置CCR:传输速率位100kHz，SCL高电平时间位5us，APB时钟频率位36MHz -> CCR = 5us/(1/36MHz)
+    I2C2->CCR |= 37;             // 配置TRISE:SCL上升沿最大时钟周期数 + 1
+
+    // 4.使能I2C外设
+    I2C2->CR1 |= I2C_CR1_PE;
+}
+
+/**
+ * @brief I2C起始信号
+ *
+ */
+void I2C_Start(void)
+{
+    uint16_t timeout = 0xFFFF; // 超时时间
+
+    // 产生起始条件
+    I2C2->CR1 |= I2C_CR1_START;
+
+    // 等待起始条件发送完成
+    while (((I2C2->SR1 & I2C_SR1_SB) == 0) && timeout)
+    {
+        timeout--;
+    }
+}
+
+/**
+ * @brief I2C停止信号
+ *
+ */
+void I2C_Stop(void)
+{
+    // 产生停止条件
+    I2C2->CR1 |= I2C_CR1_STOP;
+}
+
+/**
+ * @brief 向从机发送应答信号
+ *
+ */
+void I2C_ACK(void)
+{
+    // 应答使能，在接收到一个字节后返回一个应答
+    // 这里ACK位置1，表示会发送应答信号
+    I2C2->CR1 |= I2C_CR1_ACK;
+}
+
+/**
+ * @brief 向从机发送非应答信号
+ *
+ */
+void I2C_NACK(void)
+{
+    // 应答使能，在接收到一个字节后返回一个应答
+    // 这里ACK位置0，表示不会发送应答信号
+    I2C2->CR1 &= ~I2C_CR1_ACK;
+}
+
+/**
+ * @brief I2C发送地址
+ *
+ * @param byte 需要发送的地址
+ */
+void I2C_SendAddr(uint8_t addr)
+{
+    uint16_t timeout = 0xFFFF;
+
+    // 将需要发送的地址填入数据寄存器
+    I2C2->DR = addr;
+
+    // 等待从机应答
+    while (((I2C2->SR1 & I2C_SR1_ADDR) == 0) && timeout)
+    {
+        // timeout--;
+    }
+
+    // 清除ADDR位
+    I2C2->SR2;
+}
+
+/**
+ * @brief I2C发送一个字节数据
+ *
+ * @param byte 需要发送的数据
+ */
+void I2C_SendByte(uint8_t byte)
+{
+    uint16_t timeout = 0xFFFF;
+
+    // 等待DR为空
+    while (((I2C2->SR1 & I2C_SR1_TXE) == 0) && timeout)
+    {
+        timeout--;
+    }
+
+    // 将需要发送的数据填入数据寄存器
+    I2C2->DR = byte;
+    timeout = 0xFFFF;
+
+    // 等待字节发送完成
+    while (((I2C2->SR1 & I2C_SR1_BTF) == 0) && timeout)
+    {
+        timeout--;
+    }
+}
+
+/**
+ * @brief I2C接收一个字节的数据
+ *
+ * @return uint8_t 接收到的数据
+ */
+uint8_t I2C_ReadByte(void)
+{
+    uint16_t timeout = 0XFFFF;
+
+    // 等待数据寄存器满
+    while (((I2C2->SR1 & I2C_SR1_RXNE) == 0) && timeout)
+    {
+        timeout--;
+    }
+
+    if (timeout > 0)
+    {
+        return I2C2->DR;
+    }
+    else
+    {
+        return 0;
+    }
+}
 
 #endif

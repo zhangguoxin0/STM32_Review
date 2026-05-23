@@ -16,10 +16,10 @@ int main(void)
     printf("\n-----------------------------------\n");
 
     // 写入测试
-    M24C02_WriteByte(0x00, 'a');
-    M24C02_WriteByte(0x01, 'b');
-    M24C02_WriteByte(0x02, 'c');
-    M24C02_WriteBytes(0x03, "123456", 6);
+    M24C02_WriteByte(0x00, 'f');
+    M24C02_WriteByte(0x01, 'l');
+    M24C02_WriteByte(0x02, 's');
+    M24C02_WriteBytes(0x03, "987654", 6);
 
     // 读取测试
     byte1 = M24C02_ReadByte(0x00);
