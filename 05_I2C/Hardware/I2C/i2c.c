@@ -315,7 +315,7 @@ void I2C_SendAddr(uint8_t addr)
     // 等待从机应答
     while (((I2C2->SR1 & I2C_SR1_ADDR) == 0) && timeout)
     {
-        // timeout--;
+        timeout--;
     }
 
     // 清除ADDR位
