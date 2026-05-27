@@ -101,7 +101,7 @@ void ADC1_Init(void)
     ADC1->SQR3 |= 12 << (5 * 1); // 将通道12保存在规则通道组第2位
     // 7.设置规则通道的外部触发转换模式：不使用外部触发模式
     ADC1->CR2 |= ADC_CR2_EXTTRIG;
-    // 8.选择启动规则通道组转换的事 -> 111 ->软件触发
+    // 8.选择启动规则通道组转换模式 -> 111 ->软件触发
     ADC1->CR2 |= ADC_CR2_EXTSEL;
 }
 
@@ -150,6 +150,7 @@ void ADC1_Start_DMA(uint32_t destAddr, uint16_t dataLen)
     // 校准完成后CAL会被硬件置0，所以这里等待CAL被置0
     while ((ADC1->CR2 & ADC_CR2_CAL) && timeout)
     {
+        timeout--;
     }
     // 6.启动转换规则通道(这里通过软件启动)
     ADC1->CR2 |= ADC_CR2_SWSTART;
@@ -158,6 +159,7 @@ void ADC1_Start_DMA(uint32_t destAddr, uint16_t dataLen)
     timeout = 0xFFFF;
     while (((ADC1->SR & ADC_SR_EOC) == 0) && timeout)
     {
+        timeout--;
     }
 
     // 7.开启DMA数据传输
