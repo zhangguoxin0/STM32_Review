@@ -5,5 +5,6 @@
 
 void SPI_Init(void);
 uint8_t SPI_SwapByte(uint8_t t_byte);
+void SPI_Stop(void);
 
 #endif /* __SPI_H__ */
