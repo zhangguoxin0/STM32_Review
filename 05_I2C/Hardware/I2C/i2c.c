@@ -154,7 +154,7 @@ uint8_t I2C_WaitACK(void)
 {
     uint8_t ack;
 
-    SCL_SetValue(1); // SDA拉高 -> 开始采集SDA数据
+    SCL_SetValue(1); // SCL拉高 -> 开始采集SDA数据
     Delay_us(10);
 
     ack = SDA_ReadValue(); // 读取SDA的值
